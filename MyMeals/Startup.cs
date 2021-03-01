@@ -30,7 +30,7 @@ namespace MyMeals
                       options.UseInMemoryDatabase("name"));
             services.AddRazorPages(options =>
             {
-                options.Conventions.AuthorizePage("/Profiel");
+                //options.Conventions.AuthorizePage("/Profiel");
                 options.Conventions.AuthorizePage("/NieuweMaaltijd");
             });
         }

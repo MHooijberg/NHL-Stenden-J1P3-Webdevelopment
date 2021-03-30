@@ -6,7 +6,7 @@
 
 <head>
     <style>
-        .col-sm-2 {
+        .col {
             border-radius: 5px;
             height: 125px;
             margin: 10px;
@@ -17,6 +17,15 @@
             opacity: 1;
         }
 
+        
+        img{
+            margin:10px;
+            display:flex;
+            border-radius:10px;
+            align-items: center;
+            justify-content:center;
+        }
+
     .meer_maaltijden {
     border: none;
     color: white;
@@ -25,10 +34,6 @@
     width: 150px;
     height: 30px;
     }
-    
-     .col {
-         margin: 10px;
-     }
 
     </style>
 </head>
@@ -38,14 +43,12 @@
         <h5>Lorem ipsum..</h5>
         <br />
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <h3>Verse gerechten</h3>
             </div>
-            <div class="col">
+            <div class="col-4">
             </div>
-            <div class="col">
-            </div>
-            <div class="col">
+            <div class="col-4">
                 <button class="meer_maaltijden bg-primary" style="justify-content:end" type="button" onclick=""> Meer Maaltijden</button>
             </div>
         </div>
@@ -53,14 +56,14 @@
             <div class="col-sm-2">
                 <div class="row">
                     <div class="col" style="background-color:gray">
-                        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style="background-color:lightgray; height:60px">
                         <h10>
-                            -------------------------<br />
-                            -------------------------<br />
+                            ---------------------<br />
+                            ---------------------<br />
                         </h10>
                     </div>
                 </div>
@@ -68,14 +71,14 @@
             <div class="col-sm-2">
                 <div class="row">
                     <div class="col" style="background-color:gray">
-                        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style="background-color:lightgray; height:60px">
                         <h10>
-                            -------------------------<br />
-                            -------------------------<br />
+                            ---------------------<br />
+                            ---------------------<br />
                         </h10>
                     </div>
                 </div>
@@ -83,14 +86,14 @@
             <div class="col-sm-2">
                 <div class="row">
                     <div class="col" style="background-color:gray">
-                        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style="background-color:lightgray; height:60px">
                         <h10>
-                            -------------------------<br />
-                            -------------------------<br />
+                            ---------------------<br />
+                            ---------------------<br />
                         </h10>
                     </div>
                 </div>
@@ -98,14 +101,14 @@
             <div class="col-sm-2">
                 <div class="row">
                     <div class="col" style="background-color:gray">
-                        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style="background-color:lightgray; height:60px">
                         <h10>
-                            -------------------------<br />
-                            -------------------------<br />
+                            ---------------------<br />
+                            ---------------------<br />
                         </h10>
                     </div>
                 </div>
@@ -113,76 +116,150 @@
             <div class="col-sm-2">
                 <div class="row">
                     <div class="col" style="background-color:gray">
-                        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col" style="background-color:lightgray; height:60px">
                         <h10>
-                            -------------------------<br />
-                            -------------------------<br />
+                            ---------------------<br />
+                            ---------------------<br />
                         </h10>
                     </div>
                 </div>
             </div>
+            
             <!--
-    <div class="col-sm-2" style="background-color:gray">
-        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-    </div>
-    <div class="col-sm-2" style="background-color:gray">
-        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-    </div>
-    <div class="col-sm-2" style="background-color:gray">
-        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-    </div>
-    <div class="col-sm-2" style="background-color:gray">
-        <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-    </div>
-    <div class="row">
-        <div class="col">
-
+        <div class="col-sm-2" style="background-color:gray">
+            <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
         </div>
-        <div class="col">
-            <h10>
-                -------------------------<br />
-                -------------------------<br />
-            </h10>
+        <div class="col-sm-2" style="background-color:gray">
+            <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
         </div>
-        <div class="col">
-            <h10>
-                -------------------------<br />
-                -------------------------<br />
-            </h10>
+        <div class="col-sm-2" style="background-color:gray">
+            <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
         </div>
-        <div class="col">
-            <h10>
-                -------------------------<br />
-                -------------------------<br />
-            </h10>
+        <div class="col-sm-2" style="background-color:gray">
+            <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
         </div>
-        <div class="col">
-            <h10>
-                -------------------------<br />
-                -------------------------<br />
-            </h10>
-        </div>
-    </div>
-    -->
-        </div>
-        <br />
         <div class="row">
             <div class="col">
+
+            </div>
+            <div class="col">
+                <h10>
+                    -------------------------<br />
+                    -------------------------<br />
+                </h10>
+            </div>
+            <div class="col">
+                <h10>
+                    -------------------------<br />
+                    -------------------------<br />
+                </h10>
+            </div>
+            <div class="col">
+                <h10>
+                    -------------------------<br />
+                    -------------------------<br />
+                </h10>
+            </div>
+            <div class="col">
+                <h10>
+                    -------------------------<br />
+                    -------------------------<br />
+                </h10>
+            </div>
+        </div>
+        -->
+        </div>
+        <div class="row">
+            <div class="col-4">
                 <h3>Diepvriesgerechten</h3>
             </div>
-            <div class="col">
+            <div class="col-4">
             </div>
-            <div class="col">
-            </div>
-            <div class="col">
+            <div class="col-4">
                 <button class="meer_maaltijden bg-primary" style="justify-content:end" type="button" onclick=""> Meer Maaltijden</button>
             </div>
         </div>
         <div class="row">
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col" style="background-color:gray">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h10>
+                            ---------------------<br />
+                            ---------------------<br />
+                        </h10>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col" style="background-color:gray">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h10>
+                            ---------------------<br />
+                            ---------------------<br />
+                        </h10>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col" style="background-color:gray">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h10>
+                            ---------------------<br />
+                            ---------------------<br />
+                        </h10>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col" style="background-color:gray">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h10>
+                            ---------------------<br />
+                            ---------------------<br />
+                        </h10>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col" style="background-color:gray">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="rounded" width="125" height="100" type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h10>
+                            ---------------------<br />
+                            ---------------------<br />
+                        </h10>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">
             <div class="col-sm-2" style="background-color:gray">
                 <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
             </div>
@@ -230,7 +307,8 @@
                     </h10>
                 </div>
             </div>
+        </div>-->
+            <br />
         </div>
-        <br />
-    </div>
+        </div>
 </body>

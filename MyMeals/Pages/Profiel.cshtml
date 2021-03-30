@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{uid?}"
 @model MyMeals.Pages.ProfielModel
 @{
     ViewData["Title"] = "Profiel";
@@ -6,40 +6,31 @@
 
 <div class="container">
     <div style="border: 3px ridge;" class="col-6 p-3 rounded">
+        @if (@*User.Identity.IsAuthenticated && User.Identity.Name == null*@ false)
+        {
+            <button class="btn btn-success">Aanpassen</button>
+        }
         <div class="row">
             <div class="col-4">
                 <img class="mx-auto d-block" style="width: 100px; border: 6px solid black; border-radius: 50%;" src="~/img/pfp/ProfilePictureTemplate.png"/>
             </div>
             <div class="col-8 align-self-center">
-                <h1>Gebruiker</h1>
+                <h1>@Model.UserName</h1>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <ul class="list-unstyled ml-4" style="font-size: larger">
-                    <li><i class="p-2 text-success fas fa-map-marker-alt"></i>Locatie</li>
-                    <li><i class="p-2 text-success far fa-envelope"></i>Email</li>
-                    <li><i class="p-2 text-success fas fa-phone-alt"></i>Telefoonnummer</li>
+                    <li><i class="p-2 text-success fas fa-map-marker-alt"></i>@Model.Location</li>
+                    <li><i class="p-2 text-success far fa-envelope"></i>@Model.Email</li>
+                    <li><i class="p-2 text-success fas fa-phone-alt"></i>@Model.Phone</li>
                 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <h3>Over Gebruiker</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin feugiat enim eget massa ornare, a varius justo sagittis.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                    Duis magna enim, feugiat a venenatis id, placerat at nulla.
-                    Mauris efficitur ante lorem, non pellentesque libero feugiat ut.
-                    Vivamus interdum porta ex ut fermentum. Sed rhoncus, augue vitae euismod pellentesque,
-                    nunc tortor dapibus nulla, ac condimentum urna ante in leo. Donec quis tristique odio.
-                    Nam vel faucibus libero. Proin tellus sem, venenatis id leo sit amet,
-                    egestas tempus dui. Nam id tempus eros, vel consectetur risus.
-                    Mauris tincidunt feugiat diam nec malesuada. Vestibulum sem dolor,
-                    maximus et pulvinar at, consequat nec neque.
-                    Nunc vel sem at elit placerat mollis.
-                </p>
+                <p>@Model.About</p>
             </div>
         </div>
     </div>

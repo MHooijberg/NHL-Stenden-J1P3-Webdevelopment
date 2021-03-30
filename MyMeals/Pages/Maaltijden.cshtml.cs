@@ -9,8 +9,10 @@ namespace MyMeals.Pages
 {
     public class MaaltijdenModel : PageModel
     {
+        public string HTMLCode { get; set; }
         public void OnGet()
         {
+            
         }
     }
 }

@@ -5,14 +5,14 @@
 }
 
 <style>
-    #Gerecht{
+    .Gerecht{
         border-radius: 5px;
         height: 150px;
         margin: 10px;
         opacity: 0.7;
         transition: opacity 1s;
     }
-    #Beschrijving {
+    .Beschrijving {
         margin: 10px;
         margin-top: 0px;
         font-size: 13px;
@@ -23,6 +23,7 @@
     .col {
         margin: 0px;
     }
+    
 </style>
 
 <body>
@@ -33,7 +34,27 @@
                 <h1>Maaltijden</h1>
             </div>
         </div>
-
+        
+        @for (int i = 0; i < 10; i++)
+        {
+            <div class="row">
+            @for (int j = 0; j < 3; j++)
+            {
+                <div class="col-sm-3">
+                    <div class="row">
+                        <div class="col Gerecht" style="background-color:gray">
+                            <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col Beschrijving">
+                            <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        }
         <br>
 
         <div class="row">

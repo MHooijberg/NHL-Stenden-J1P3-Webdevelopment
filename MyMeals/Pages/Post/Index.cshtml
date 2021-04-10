@@ -1,0 +1,84 @@
+﻿@page
+@model MyMeals.Pages.Post.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].PostNaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Bevroren)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].BereidOp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].HoudbaarTot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Porties)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Beschrijving)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Gebruiker)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post[0].Maaltijd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Post) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bevroren)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BereidOp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoudbaarTot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Porties)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gebruiker.AchterNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Maaltijd.Ingredienten)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PostId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PostId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PostId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

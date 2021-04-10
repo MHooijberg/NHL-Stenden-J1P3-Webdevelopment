@@ -1,0 +1,72 @@
+﻿@page
+@model MyMeals.Pages.Post.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Post.PostNaam" class="control-label"></label>
+                <input asp-for="Post.PostNaam" class="form-control" />
+                <span asp-validation-for="Post.PostNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.GebruikerId" class="control-label"></label>
+                <select asp-for="Post.GebruikerId" class ="form-control" asp-items="ViewBag.GebruikerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.MaaltijdId" class="control-label"></label>
+                <select asp-for="Post.MaaltijdId" class ="form-control" asp-items="ViewBag.MaaltijdId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Bevroren" class="control-label"></label>
+                <input asp-for="Post.Bevroren" class="form-control" />
+                <span asp-validation-for="Post.Bevroren" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.BereidOp" class="control-label"></label>
+                <input asp-for="Post.BereidOp" class="form-control" />
+                <span asp-validation-for="Post.BereidOp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.HoudbaarTot" class="control-label"></label>
+                <input asp-for="Post.HoudbaarTot" class="form-control" />
+                <span asp-validation-for="Post.HoudbaarTot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Porties" class="control-label"></label>
+                <input asp-for="Post.Porties" class="form-control" />
+                <span asp-validation-for="Post.Porties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Prijs" class="control-label"></label>
+                <input asp-for="Post.Prijs" class="form-control" />
+                <span asp-validation-for="Post.Prijs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Beschrijving" class="control-label"></label>
+                <input asp-for="Post.Beschrijving" class="form-control" />
+                <span asp-validation-for="Post.Beschrijving" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

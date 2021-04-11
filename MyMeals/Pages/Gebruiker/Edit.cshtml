@@ -1,0 +1,65 @@
+﻿@page
+@model MyMeals.Pages.Gebruiker.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Gebruiker</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Gebruiker.GebruikerId" />
+            <div class="form-group">
+                <label asp-for="Gebruiker.VoorNaam" class="control-label"></label>
+                <input asp-for="Gebruiker.VoorNaam" class="form-control" />
+                <span asp-validation-for="Gebruiker.VoorNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gebruiker.AchterNaam" class="control-label"></label>
+                <input asp-for="Gebruiker.AchterNaam" class="form-control" />
+                <span asp-validation-for="Gebruiker.AchterNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gebruiker.ProfielNaam" class="control-label"></label>
+                <input asp-for="Gebruiker.ProfielNaam" class="form-control" />
+                <span asp-validation-for="Gebruiker.ProfielNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gebruiker.Email" class="control-label"></label>
+                <input asp-for="Gebruiker.Email" class="form-control" />
+                <span asp-validation-for="Gebruiker.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gebruiker.Wachtwoord" class="control-label"></label>
+                <input asp-for="Gebruiker.Wachtwoord" class="form-control" />
+                <span asp-validation-for="Gebruiker.Wachtwoord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gebruiker.AdresId" class="control-label"></label>
+                <select asp-for="Gebruiker.AdresId" class="form-control" asp-items="ViewBag.AdresId"></select>
+                <span asp-validation-for="Gebruiker.AdresId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gebruiker.Telefoonnummer" class="control-label"></label>
+                <input asp-for="Gebruiker.Telefoonnummer" class="form-control" />
+                <span asp-validation-for="Gebruiker.Telefoonnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

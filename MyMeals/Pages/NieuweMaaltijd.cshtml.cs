@@ -10,7 +10,7 @@ namespace MyMeals.Pages
     public class NieuweMaaltijdModel : PageModel
     {
         public void OnGet()
-        {
+        { 
         }
     }
 }

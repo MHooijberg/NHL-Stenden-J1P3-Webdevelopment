@@ -60,7 +60,6 @@ namespace MyMeals
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                
             });
 
 

@@ -9,10 +9,10 @@ namespace MyMeals.Pages
 {
     public class MaaltijdenModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
         [BindProperty]
         public List<Models.Maaltijd> Maaltijden { get; set; }
-        public MaaltijdenModel(MyMeals.Models.MijnMaaltijdContext context)
+        public MaaltijdenModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

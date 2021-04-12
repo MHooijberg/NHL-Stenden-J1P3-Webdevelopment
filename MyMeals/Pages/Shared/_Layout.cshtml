@@ -32,6 +32,12 @@
                         <li class="nav-item m-1">
                             <button class="btn btn-outline-dark">Registreer</button>
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item m-1">
+                                <button class="btn btn-outline-dark">Logout</button>
+                            </li>
+                        }
                     </ul>
 
                     

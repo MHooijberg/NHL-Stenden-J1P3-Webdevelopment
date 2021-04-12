@@ -18,7 +18,8 @@ namespace MyMeals.Areas.Identity
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<MyMealsContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("MyMealsContextConnection")));
+                        context.Configuration.GetConnectionString("MijnMaaltijdContext")));
+                        //context.Configuration.GetConnectionString("MyMealsContextConnection")));
 
                 services.AddDefaultIdentity<MyMealsUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<MyMealsContext>();

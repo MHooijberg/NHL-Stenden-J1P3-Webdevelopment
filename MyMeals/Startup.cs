@@ -63,6 +63,8 @@ namespace MyMeals
             {
                 endpoints.MapRazorPages();
             });
+
+
         }
     }
 }

@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using MyMeals.Models;
+using MyMeals.Data;
 
 namespace MyMeals.Pages.Adres
 {
     public class CreateModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public CreateModel(MyMeals.Models.MijnMaaltijdContext context)
+        public CreateModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

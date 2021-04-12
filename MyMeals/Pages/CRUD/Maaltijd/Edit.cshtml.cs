@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyMeals.Models;
+using MyMeals.Data;
 
 namespace MyMeals.Pages.Maaltijd
 {
     public class EditModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public EditModel(MyMeals.Models.MijnMaaltijdContext context)
+        public EditModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

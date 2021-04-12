@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,11 @@ namespace MyMeals
             //TODO: Change database name
             services.AddDbContext<MijnMaaltijdContext>(options =>
                       options.UseSqlServer(Configuration.GetConnectionString("MijnMaaltijdContext")));
+            //services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<MijnMaaltijdContext>()
+            //    .AddDefaultUI()
+            //    .AddDefaultTokenProviders();
+
             services.AddRazorPages(options =>
             {
                 //options.Conventions.AuthorizePage("/Profiel");

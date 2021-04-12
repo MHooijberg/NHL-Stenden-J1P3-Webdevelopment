@@ -3,17 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Runtime;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using MyMeals.Models;
 
 #nullable disable
 
-namespace MyMeals.Models
+namespace MyMeals.Data
 {
-    public partial class MijnMaaltijdContext : DbContext
-    {
-        public MijnMaaltijdContext()
-        {
-        }
-
+    public partial class MijnMaaltijdContext : IdentityDbContext
+    { 
         public MijnMaaltijdContext(DbContextOptions<MijnMaaltijdContext> options)
             : base(options)
         {
@@ -35,6 +33,8 @@ namespace MyMeals.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
 
             modelBuilder.Entity<Adres>(entity =>

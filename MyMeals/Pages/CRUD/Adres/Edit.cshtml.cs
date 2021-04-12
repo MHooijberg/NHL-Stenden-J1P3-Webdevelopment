@@ -12,9 +12,9 @@ namespace MyMeals.Pages.Adres
 {
     public class EditModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public EditModel(MyMeals.Models.MijnMaaltijdContext context)
+        public EditModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

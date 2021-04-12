@@ -10,11 +10,11 @@ namespace MyMeals.Pages
 {
     public class ProfielModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
         [BindProperty]
         public Models.Gebruiker Gebruiker { get; set; }
 
-        public ProfielModel(MyMeals.Models.MijnMaaltijdContext context)
+        public ProfielModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

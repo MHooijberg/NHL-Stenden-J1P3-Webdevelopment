@@ -11,9 +11,9 @@ namespace MyMeals.Pages.Post
 {
     public class IndexModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public IndexModel(MyMeals.Models.MijnMaaltijdContext context)
+        public IndexModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

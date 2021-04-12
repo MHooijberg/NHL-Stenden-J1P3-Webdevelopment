@@ -11,9 +11,9 @@ namespace MyMeals.Pages.Gebruiker
 {
     public class CreateModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public CreateModel(MyMeals.Models.MijnMaaltijdContext context)
+        public CreateModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

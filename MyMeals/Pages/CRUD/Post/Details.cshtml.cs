@@ -11,9 +11,9 @@ namespace MyMeals.Pages.Post
 {
     public class DetailsModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public DetailsModel(MyMeals.Models.MijnMaaltijdContext context)
+        public DetailsModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

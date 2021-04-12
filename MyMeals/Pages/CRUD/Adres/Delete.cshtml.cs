@@ -11,9 +11,9 @@ namespace MyMeals.Pages.Adres
 {
     public class DeleteModel : PageModel
     {
-        private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MijnMaaltijdContext _context;
 
-        public DeleteModel(MyMeals.Models.MijnMaaltijdContext context)
+        public DeleteModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
         }

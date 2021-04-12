@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
 
 namespace MyMeals.Models
 {
-    public partial class Gebruiker
+    public class Gebruiker : IdentityUser
     {
         public Gebruiker()
         {
@@ -17,7 +18,7 @@ namespace MyMeals.Models
         public string VoorNaam { get; set; }
         public string AchterNaam { get; set; }
         public string ProfielNaam { get; set; }
-        public string Email { get; set; }
+        //public string Email { get; set; }
         public string Wachtwoord { get; set; }
         public int AdresId { get; set; }
         public string Telefoonnummer { get; set; }

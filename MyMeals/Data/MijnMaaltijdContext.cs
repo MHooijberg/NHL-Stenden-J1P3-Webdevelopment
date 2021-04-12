@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using System.Runtime;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using MyMeals.Models;
+using MyMeals.Areas.Identity.Data;
 
 #nullable disable
 
 namespace MyMeals.Data
 {
-    public partial class MijnMaaltijdContext : IdentityDbContext
+    public partial class MijnMaaltijdContext : IdentityDbContext<MijnMaaltijdGebruiker>
     { 
         public MijnMaaltijdContext(DbContextOptions<MijnMaaltijdContext> options)
             : base(options)

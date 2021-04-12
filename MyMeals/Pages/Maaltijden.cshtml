@@ -6,27 +6,13 @@
 
 <style>
     .col-Gerecht {
-        border-radius: 5px;
-        height: 200px;
-        margin: 10px;
         opacity: 0.7;
         transition: opacity 1s;
         background-color: gray;
-        width: 100%;
+        
     }
-
-    .col-Beschrijving {
-        margin: 10px;
-        margin-top: 0px;
-        font-size: 13px;
-    }
-
     .col-Gerecht:hover {
         opacity: 1;
-    }
-
-    .col {
-        margin: 0px;
     }
 </style>
 
@@ -43,23 +29,22 @@
         <div class="row justify-content-between w-100">
             @for (int i = 0; i < 6; i++)
             {
-<div class="col-sm-4">
-    <div class="row">
-        <div class="col-Gerecht">
-            <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-Beschrijving">
-            <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
-        </div>
-    </div>
-</div>}
-
+            <div class="col-sm-4">
+                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+                    <div class="col-Gerecht m-2">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="mw-100"  type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-Beschrijving m-2">
+                        <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
+                    </div>
+                </div>
+            </div>
+            }
         </div>
         <br>
     </div>
-
 </body>
 
 

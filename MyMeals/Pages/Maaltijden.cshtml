@@ -1,19 +1,17 @@
 ﻿@page
 @model MyMeals.Pages.MaaltijdenModel
-@{
-    ViewData["Title"] = "Maaltijden";
-}
+@{ ViewData["Title"] = "Maaltijden"; }
 
 <style>
     .col-Gerecht {
         opacity: 0.7;
         transition: opacity 1s;
         background-color: gray;
-        
     }
-    .col-Gerecht:hover {
-        opacity: 1;
-    }
+
+        .col-Gerecht:hover {
+            opacity: 1;
+        }
 </style>
 
 <body>
@@ -27,47 +25,21 @@
 
 
         <div class="row justify-content-between w-100">
-            @for (int i = 0; i < 6; i++)
+            @foreach (Models.Post item in Model.Posts)
             {
-            <div class="col-sm-4">
-                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <div class="col-Gerecht m-2">
-                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="mw-100 rounded"  type="submit" onclick="" />
+                <div class="col-sm-4">
+                    <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+                        <div class="col-Gerecht m-2">
+                            <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" class="mw-100" type="submit" onclick="" />
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-Beschrijving m-2">
-                        <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
+                    <div class="row">
+                        <div class="col-Beschrijving m-2">
+                            <h7>@item.Beschrijving</h7>
+                        </div>
                     </div>
-                </div>
-            </div>
-            }
+                </div>}
         </div>
         <br>
-
-        <div class="row">
-            <div id="Gerecht" class="col-sm-3" style="background-color:gray">
-                <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-            </div>
-            <div id="Gerecht" class="col-sm-3" style="background-color:gray">
-                <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-            </div>
-            <div id="Gerecht" class="col-sm-3" style="background-color:gray">
-                <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
-            </div>
-        </div>
-        <div class="row">
-            <div id="Beschrijving" class="col-sm-3">
-                <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
-            </div>
-            <div id="Beschrijving" class="col-sm-3">
-                <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
-            </div>
-            <div id="Beschrijving" class="col-sm-3">
-                <h7>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sagittis tortor, porta lacinia massa. Cras eleifend</h7>
-            </div>
-        </div>
     </div>
 </body>
-
-

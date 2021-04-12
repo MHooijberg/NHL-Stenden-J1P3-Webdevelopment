@@ -11,7 +11,7 @@ namespace MyMeals.Pages
     {
         private readonly MyMeals.Data.MijnMaaltijdContext _context;
         [BindProperty]
-        public List<Models.Maaltijd> Maaltijden { get; set; }
+        public List<Models.Post> Posts { get; set; }
         public MaaltijdenModel(MyMeals.Data.MijnMaaltijdContext context)
         {
             _context = context;
@@ -19,12 +19,12 @@ namespace MyMeals.Pages
 
         public void OnGet()
         {
-            Maaltijden = _context.Maaltijds.ToList();
+            Posts = _context.Posts.ToList();
         }
 
         //public void OnGet()
         //{
-            
+
         //}
     }
 }

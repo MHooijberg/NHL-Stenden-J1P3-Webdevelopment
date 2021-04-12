@@ -12,12 +12,12 @@ namespace MyMeals.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<MyMealsUser> _userManager;
-        private readonly SignInManager<MyMealsUser> _signInManager;
+        private readonly UserManager<MijnMaaltijdGebruiker> _userManager;
+        private readonly SignInManager<MijnMaaltijdGebruiker> _signInManager;
 
         public IndexModel(
-            UserManager<MyMealsUser> userManager,
-            SignInManager<MyMealsUser> signInManager)
+            UserManager<MijnMaaltijdGebruiker> userManager,
+            SignInManager<MijnMaaltijdGebruiker> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -36,9 +36,24 @@ namespace MyMeals.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Voornaam")]
+            public string Voornaam { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Achternaam")]
+            public string Achternaam { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Profielnaam")]
+            public string Profielnaam { get; set; }
         }
 
-        private async Task LoadAsync(MyMealsUser user)
+        private async Task LoadAsync(MijnMaaltijdGebruiker user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
@@ -47,7 +62,10 @@ namespace MyMeals.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Voornaam = user.Voornaam,
+                Achternaam = user.Achternaam,
+                Profielnaam = user.Profielnaam
             };
         }
 
@@ -87,6 +105,23 @@ namespace MyMeals.Areas.Identity.Pages.Account.Manage
                     return RedirectToPage();
                 }
             }
+
+            if (Input.Voornaam != user.Voornaam)
+            {
+                user.Voornaam = Input.Voornaam;
+            }
+
+            if (Input.Achternaam != user.Achternaam)
+            {
+                user.Achternaam = Input.Achternaam;
+            }
+
+            if (Input.Profielnaam != user.Profielnaam)
+            {
+                user.Profielnaam = Input.Profielnaam;
+            }
+
+            await _userManager.UpdateAsync(user);
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

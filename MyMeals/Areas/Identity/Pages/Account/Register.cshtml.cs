@@ -20,14 +20,14 @@ namespace MyMeals.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<MyMealsUser> _signInManager;
-        private readonly UserManager<MyMealsUser> _userManager;
+        private readonly SignInManager<MijnMaaltijdGebruiker> _signInManager;
+        private readonly UserManager<MijnMaaltijdGebruiker> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<MyMealsUser> userManager,
-            SignInManager<MyMealsUser> signInManager,
+            UserManager<MijnMaaltijdGebruiker> userManager,
+            SignInManager<MijnMaaltijdGebruiker> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -46,6 +46,21 @@ namespace MyMeals.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Voornaam")]
+            public string Voornaam { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Achternaam")]
+            public string Achternaam { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Profielnaam")]
+            public string Profielnaam { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -71,11 +86,18 @@ namespace MyMeals.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new MyMealsUser { UserName = Input.Email, Email = Input.Email };
+                var user = new MijnMaaltijdGebruiker 
+                { 
+                    UserName = Input.Email,
+                    Email = Input.Email ,
+                    Voornaam = Input.Voornaam,
+                    Achternaam = Input.Achternaam,
+                    Profielnaam = Input.Profielnaam
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

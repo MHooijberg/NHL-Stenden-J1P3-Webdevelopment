@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MyMeals.Models
 {
-    public class Gebruiker : IdentityUser
+    public class Gebruiker
     {
         public Gebruiker()
         {
@@ -18,7 +18,7 @@ namespace MyMeals.Models
         public string VoorNaam { get; set; }
         public string AchterNaam { get; set; }
         public string ProfielNaam { get; set; }
-        //public string Email { get; set; }
+        public string Email { get; set; }
         public string Wachtwoord { get; set; }
         public int AdresId { get; set; }
         public string Telefoonnummer { get; set; }

@@ -11,7 +11,8 @@ using MyMeals.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
+using MyMeals.Areas.Identity.Data;
 namespace MyMeals
 {
     public class Startup
@@ -29,11 +30,8 @@ namespace MyMeals
             //TODO: Change database name
             services.AddDbContext<MijnMaaltijdContext>(options =>
                       options.UseSqlServer(Configuration.GetConnectionString("MijnMaaltijdContext")));
-            //services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-            //    .AddEntityFrameworkStores<MijnMaaltijdContext>()
-            //    .AddDefaultUI()
-            //    .AddDefaultTokenProviders();
-
+            services.AddDefaultIdentity<MijnMaaltijdGebruiker>()
+            .AddEntityFrameworkStores<MijnMaaltijdContext>();
             services.AddRazorPages(options =>
             {
                 //options.Conventions.AuthorizePage("/Profiel");

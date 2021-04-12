@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyMeals.Data;
 
 namespace MyMeals.Migrations.MyMeals
 {
     [DbContext(typeof(MyMealsContext))]
-    partial class MyMealsContextModelSnapshot : ModelSnapshot
+    [Migration("20210412130826_CombineUserData")]
+    partial class CombineUserData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

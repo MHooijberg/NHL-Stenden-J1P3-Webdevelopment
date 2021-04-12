@@ -39,27 +39,21 @@
             </div>
         </div>
         <br>
-@for (int i = 0; i < 10; i++){
-    <div class="row">
-
-@for (int j = 0; j < 3; j++){
-    <div class="col-sm-4">
-        <div class="row">
-            <div class="col-Gerecht">
-                <img src="prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+        @foreach (Models.Maaltijd item in Model.Maaltijden)
+        {
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-Gerecht">
+                        <img src="~/img/meals/prei-stamppot-met-kip-ketjap-418x315.jpg" type="submit" onclick="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-Beschrijving">
+                        <h7>@item.Naam</h7>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-Beschrijving">
-                <h7>Soep met broodje gehaktbal</h7>
-            </div>
-        </div>
-    </div>}
-    </div>}
-
-
-
-
+        }
     </div>
     
 </body>

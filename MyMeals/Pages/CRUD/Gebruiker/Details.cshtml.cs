@@ -12,6 +12,7 @@ namespace MyMeals.Pages.Gebruiker
     public class DetailsModel : PageModel
     {
         private readonly MyMeals.Models.MijnMaaltijdContext _context;
+        private readonly MyMeals.Data.MyMealsContext _context2;
 
         public DetailsModel(MyMeals.Models.MijnMaaltijdContext context)
         {

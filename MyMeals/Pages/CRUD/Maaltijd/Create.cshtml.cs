@@ -35,7 +35,6 @@ namespace MyMeals.Pages.Maaltijd
             {
                 return Page();
             }
-
             _context.Maaltijds.Add(Maaltijd);
             await _context.SaveChangesAsync();
 

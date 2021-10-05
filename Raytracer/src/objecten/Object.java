@@ -11,9 +11,7 @@ public abstract class Object {
     
     public abstract Vec3 calculateIntersection(Ray ray);
 
-    public Vec3 getNormalAt(Vec3 point){
-        
-    }
+    public abstract Vec3 getNormalAt(Vec3 point);
 
     public Color getColor(){
         return color;

@@ -6,7 +6,7 @@ public class Vec3 {
     private float y;
     private float z;
 
-    public void Vec3(float x, float y, float z){
+    public Vec3(float x, float y, float z){
 
         this.x = x;
         this.y = y;
@@ -14,71 +14,108 @@ public class Vec3 {
     }
 
     public float getX() { 
+
         return x; 
+
     }
 
     public float getY() { 
+
         return y; 
+
     }
 
     public float getZ() { 
+
         return z; 
+
     }
 
     public void setX(float x) { 
+
         this.x = x; 
+
     }
     
     public void setY(float y) { 
+
         this.y = y;
+
     }
 
     public void setZ(float z) { 
+
         this.z = z;
-    }
-
-    public Vec3 add(Vec3 vec) { 
-        
-    }
-
-    public Vec3 subtract(Vec3 vec) {
 
     }
 
-    public Vec3 multiply(Vec3 vec) {
+    public Vec3 add(Vec3 vector) { 
+
+        return new Vec3(this.x + vector.x, this.y + vector.y, this.z + vector.z);
 
     }
 
-    public float multiply(float scalar) {
+    public Vec3 subtract(Vec3 vector) {
+
+        return new Vec3(this.x - vector.x, this.y - vector.y, this.z - vector.z);
 
     }
 
-    public Vec3 divide(Vec3 vec) {
+    public Vec3 multiply(Vec3 vector) {
+
+        return new Vec3(this.x * vector.x, this.y * vector.y, this.z * vector.z);
+
+    }
+
+    public Vec3 multiply(float scalar) {
+
+        return new Vec3(this.x * scalar, this.y * scalar, this.z * scalar);
+
+    }
+
+    public Vec3 divide(Vec3 vector) {
+
+        return new Vec3(this.x / vector.x, this.y / vector.y, this.z / vector.z);
 
     }
 
     public float length() {
 
+        return (float) Math.sqrt(x * x + y * y + z * z);//cast zodat Math.sqrt kommagetallen meeneemt.
+        
     }
 
     public Vec3 normalize() {
+        
+        float sumlength = length();
+
+        return new Vec3( this.x / sumlength, this.y / sumlength, this.z / sumlength );
 
     }
 
-    public Vec3 translate(Vec3 vec) {
+    public void translate(Vec3 vector) {
+
+        this.x += vector.x;
+        this.y += vector.y;
+        this.z += vector.z;
 
     }
 
-    public Vec3 distance(Vec3 a, Vec3 b) {
+    public static float distance(Vec3 a, Vec3 b) {
+
+        return (float) Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2) + Math.pow(a.z - b.z, 2));
 
     }
 
-    public Vec3 dotPos(Vec3 a, Vec3 b) {
+    public float dotPos(Vec3 a, Vec3 b) {
+
+        return a.x * b.x + a.y * b.y + a.z * b.z;
 
     }
 
-    @Override
-    public float toArray() {
+    public float[] toArray() {
+
+        return new float[]{x,y,z};
         
     }
 }

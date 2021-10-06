@@ -107,7 +107,7 @@ public class Vec3 {
 
     }
 
-    public float dotPos(Vec3 a, Vec3 b) {
+    public static float dotPos(Vec3 a, Vec3 b) {
 
         return a.x * b.x + a.y * b.y + a.z * b.z;
 
